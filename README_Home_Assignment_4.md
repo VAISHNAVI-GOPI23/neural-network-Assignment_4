@@ -7,11 +7,6 @@
 
 ---
 
-## 📌 Overview
-
-This repository contains code and explanations for **Home Assignment 4**, covering Chapters 11 and 12. The assignment includes both theoretical and programming components related to GANs, data poisoning, AI ethics, and fairness tools.
-
----
 
 ## ✅ Contents
 
@@ -22,9 +17,29 @@ This repository contains code and explanations for **Home Assignment 4**, coveri
   - Generator tries to fool the discriminator.
   - Discriminator gets better at detecting fakes.
 
-**Diagram**: See `GAN_architecture_diagram.png` (optional)
+        +--------------------+         +--------------------+
+        |    Random Noise    |         |     Real Data      |
+        |       Vector z     |         |    (e.g., MNIST)   |
+        +---------+----------+         +----------+---------+
+                  |                              |
+             +----v----+                    +----v----+
+             | Generator|                    |         |
+             |   G(z)   |                    |         |
+             +----+----+                    |         |
+                  |                         |         |
+        +---------v----------+      +-------v---------+
+        |   Generated Image   |     |   Real Image     |
+        +---------+----------+      +--------+--------+
+                  |                         |
+                  +-----------+-------------+
+                              |
+                         +----v----+
+                         |Discriminator|
+                         |     D(x)     |
+                         +----+----+
+                              |
+                    Predicts Real (1) or Fake (0)
 
----
 
 ### 2. Ethics and AI Harm
 
